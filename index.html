@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="index.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery v1.9.1 -->
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <!-- Animate.css v3.5.2 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
+    <!-- AOS animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- 套用google font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- 套用google font icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+        @media (max-width:1179px) {
+            .about_content{
+                width: 100%;
+                max-width: 1200px;
+                text-align: center;
+                padding: 10px;
+                height:350px;
+            }
+        }
+        @media (max-width:768px) {
+        .nav_btn:not(:first-child){
+            display: none;
+        }
+        .topnav h2:hover{
+            border-bottom:none ;
+        }
+        .special{
+            position: absolute;
+            left: -9999px;
+        }
+        .bottom_layout{
+            grid-template-columns: auto;
+            grid-column: 1;
+            grid-row: 2;
+            width: 90%;
+           }
+        .bottom_message{
+            padding-top: 20px;
+           } 
+        .works_layout{
+            grid-template-columns: auto;
+            grid-row: 4;
+            grid-column: 1;
+        }
+        .university_record{
+            grid-template-columns: auto;
+            grid-row: 4;
+            grid-column: 1;
+        }
+        .work_experience{
+            border: none;
+        }
+        .certificate{
+            border: none;
+            background-color:  snow;
+        }
+        .certificate>div{
+            background-color:  snow;
+        }
+        .awards_inside{
+            border: none;
+            background-color: #E2C2DE;
+        }
+        .awards_inside>div{
+            background-color: #E2C2DE;
+        }
+        .awards_outside{
+            background-color: snow;
+        }
+        .awards_outside>div{
+            background-color: snow;
+        }
+        .circle{
+            width: 430px;
+            height: 430px;
+        }
+        .logo{
+            position: absolute;
+            width: 330px;
+            height: 330px;
+            background-image: url(image/me.jpg);
+            background-size: cover;
+            border-radius: 50%;
+            text-align: center;
+            margin: auto;
+        } 
+        .circle_text span{
+            position: absolute;
+            left: 50%;
+            font-size: 20px;
+            transform-origin: 0px 215px;
+        }
+        #dot_1{
+            width: 100px;
+            height: 100px;
+            background-color: #E2C2DE;
+            border-radius: 100px 0 0 0 ;
+            position: absolute;
+            bottom: 0%;
+            right: 0%;
+        }
+        #dot_9{
+            display: none;
+        }
+        #dot_12{
+            display: none;
+        }
+        .about_layout{
+            grid-template-columns: auto;
+            grid-column: 1;
+        }
+        .skills_layout{
+            grid-template-columns: auto;
+            grid-column: 1;
+        }
+        .gallery{
+            grid-template-columns: auto;
+            grid-row: 2;
+            grid-column: 1;
+        }
+        .works_description{
+            border-left: none;
+            border-top: 1px solid #642100;;
+        }
+        .arrow_left{
+            left: -3%;
+            top: 62%;
+            transform: translate(3%,-62%);
+        }
+        .arrow_right{
+            left: 103%;
+            top: 62%;
+            transform: translate(-103%,-62%);
+        }
+        }
+        @media (min-width:769px) {
+        .menu_icon{
+            visibility: hidden;
+            position: absolute;
+            }
+        }
+    </style>
+    <title>HJL's website</title>
+</head>
+<body>
+     <!-- 導覽列 -->
+    <div class="topnav fixed-top">
+        <h2 onclick="location.href='index.html'">HJL</h2>
+        <div class="nav_btn special" onclick="location.href='#about'">About me</div>
+        <div class="nav_btn" onclick="location.href='#persoanl_skill'">Skills</div>
+        <div class="nav_btn" onclick="location.href='notes.html'">Notes</div>
+        <div class="nav_btn" onclick="location.href='https://github.com/iamsherolu'">GitHub</div>
+        <div class="nav_btn" onclick="location.href='#contact'">Contact me</div>
+        <div class="menu_icon" onclick="show_menu_overlay()">Menu</div>
+    </div>
+        <!-- menu overlay -->
+    <div id="show_menu_overlay">
+        <div class="menu_overlay_layout">
+            <div class="menu_btns">
+                <div class="menu_btn off_menu_overlay" id="off_menu_overlay" onclick="off_menu_overlay()">
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+                </div>
+                <div class="menu_btn" onclick="location.href='index.html'">Homepage</div>
+                <div class="menu_btn" onclick="scrollToSection('about')">About me</div>
+                <div class="menu_btn" onclick="scrollToSection('persoanl_skill')">Skills</div>
+                <div class="menu_btn" onclick="location.href='notes.html'">Notes</div>
+                <div class="menu_btn" onclick="'https://github.com/iamsherolu'">GitHub</div>
+                <div class="menu_btn" onclick="scrollToSection('contact')">Contact me</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 網頁開始 -->
+    <section id="intro">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col" >
+                    <div class="circle">
+                        <div class="logo"></div>
+                        <div class="circle_text">
+                          <p>Hello,this is HJL's website.</p>
+                        </div>
+                    </div>
+                    <div class="dot" id="dot_1" data-aos="fade-left"></div>
+                    <div class="dot" id="dot_2" data-aos="fade-right"></div>
+                    <div class="dot" id="dot_3" data-aos="fade-down"></div>
+                    <div class="dot" id="dot_4" data-aos="fade-up"></div>
+                    <div class="dot" id="dot_5" data-aos="fade-up"></div>
+                    <div class="dot" id="dot_6" data-aos="fade-down"></div>
+                    <div class="dot" id="dot_7" data-aos="fade-up"></div>
+                    <div class="dot" id="dot_8" data-aos="fade-down"></div>
+                    <div class="dot" id="dot_9" data-aos="fade-up"></div>
+                    <div class="dot" id="dot_10" data-aos="fade-down"></div>
+                    <div class="dot" id="dot_11" data-aos="fade-up"></div>
+                    <div class="dot" id="dot_12" data-aos="fade-down"></div>
+                </div>
+            </div>
+        </div>
+    
+    </section>
+    
+    <!-- about -->
+    <section id="about">
+       <div class="title" data-aos="fade-down">About me</div>
+       <div class="about_layout" data-aos="fade-up">
+        <div class="about_item" >
+            <div class="about_title">學經歷</div>
+            <div class="about_item_content">
+                <ul>
+                <li>
+                    畢業於銘傳大學資訊管理學系（2014.9-2018.6）
+                </li>
+                <li>曾任系上教學助理（銘傳大學教學卓越計畫）（2016.9-2017.1）</li>
+                <li>畢業後投身於高普考（2018.7-2023.7）</li>
+                <li>轉往朝前端工程師的道路邁進（2023.10-now）</li>
+            </ul>
+            </div>
+            
+        </div>
+        <div class="about_item">
+            <div class="about_title">證照與獲獎紀錄</div>
+            <div class="about_item_content">
+              <ul>
+                <li>考取TQC中文輸入證照與英文輸入證照(2014)</li>
+                <li>考取辦公室應用Word 2010、PPT 2010、Excel 2010實用級合格證書（2015）</li>
+                <li>考取鼎新ERP配銷模組與生產製造模組證照（2017、2018）</li>
+                <li>參加E化系統創意競賽榮獲第三名(2018)</li>
+            </ul>  
+            </div>
+            
+        </div>
+        <div class="about_item">
+            <div class="about_title">特質</div>
+            <div class="about_item_content">
+                <ul>
+                <li>觀察力敏銳</li>
+                <li>不輕易放棄</li>
+                <li>做事用心肯學</li>
+                <li>具有同理心</li>
+                <li>高敏感</li>
+            </ul>
+            <p>「因為你是可以把不擅長的東西做得很好的人」 -by my friend,Jill</p>
+            </div>
+            
+        </div>
+       </div>
+    </section>
+
+    <!-- skill -->
+    <section id="persoanl_skill">
+        <div class="personal_skill_layout">
+            <div class="title">Skills</div>
+            <div class="skills">
+                <div class="skills_layout" data-aos="fade-left">
+                    <div class="skills_item">
+                       <div class="skills_item_title">網頁技術</div> 
+                       <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                       </ul>
+                    </div>
+                    <div class="skills_item" style="background-color: #fdf2f0;">
+                        <div class="skills_item_title">程式語言</div> 
+                        <ul>
+                            <li>JavaScript</li>
+                        </ul>
+                     </div>
+                     <div class="skills_item">
+                        <div class="skills_item_title">框架</div> 
+                        <ul>
+                            <li>Vue</li>
+                        </ul>
+                     </div>
+                    <div class="skills_item" style="background-color: #fdf2f0;">
+                        <div class="skills_item_title">其他</div> 
+                        <ul>
+                            <li>會套用google font和google font icon</li>
+                            <li>會套用AOS動畫</li>
+                        </ul>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="works">
+                <div class="skills_title" data-aos="fade-right">Practice works</div>
+                <div class="works_layout" data-aos="fade-left">
+                    <div class="gallery">
+                        <div class="works_img">
+                            <img src="image/糖露坊.png" onclick="location.href='https://iamsherolu.github.io/dessert_shop/'">
+                        </div>
+                        <div class="works_description" style="float: right;">
+                            <div class="works_title">糖露坊</div>
+                            <ul>
+                                <li>此為甜點店網頁，內容包含首頁、最新消息、美味甜點、門市據點、關於我們以及購物籃</li>
+                                <li>係以純HTML、CSS以及JavaScript完成之</li>
+                                <li>為一響應式網頁</li>
+                                <li>目的：練習切版與JavaScript</li>
+                            </ul>
+                            <div class="works_btns">
+                                <div class="demo" onclick="location.href='https://iamsherolu.github.io/dessert_shop/'">demo</div>
+                                <div class="github_code" onclick="location.href='https://github.com/iamsherolu/dessert_shop'">GitHub Code</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery">
+                        <div class="works_img">
+                            <img src="image/diverson topia.png">
+                        </div>
+                        <div class="works_description" style="float: right;">
+                            <div class="works_title">Diverson Topia</div>
+                            <ul>
+                                <li>內含三個小遊戲：包含剪刀石頭布、記憶力大考驗以及終極密碼</li>
+                                <li>係以純HTML、CSS以及JavaScript完成之</li>
+                                <li>為一響應式網頁</li>
+                                <li>目的：加強練習JavaScript</li>
+                            </ul>
+                            <div class="works_btns">
+                                <div class="demo" onclick="location.href='https://iamsherolu.github.io/game/'">demo</div>
+                                <div class="github_code" onclick="location.href='https://github.com/iamsherolu/game'">GitHub Code</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery">
+                        <div class="works_img">
+                            <img src="image/notes.png">
+                        </div>
+                        <div class="works_description" style="float: right;">
+                            <div class="works_title">程式設計學習筆記</div>
+                            <ul>
+                                <li>記錄我在學習前端網頁程式以及相關觀念之筆記</li>
+                                <li>係以純HTML、CSS以及JavaScript完成之</li>
+                                <li>為一響應式網頁</li>
+                            </ul>
+                            <div class="works_btns">
+                                <div class="demo" onclick="location.href='https://iamsherolu.github.io/my_website/notes.html'">demo</div>
+                                <div class="github_code" onclick="location.href='https://github.com/iamsherolu/my_website/blob/main/notes.html'">GitHub Code</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery">
+                        <div class="works_img">
+                            <img src="image/yt.png">
+                        </div>
+                        <div class="works_description" style="float: right;">
+                            <div class="works_title">YouTube切版</div>
+                            <ul>
+                                <li>係仿效YouTub網頁版所做之切版練習</li>
+                                <li>係以純HTML、CSS以及JavaScript完成之</li>
+                                <li>目的：加強練習切版</li>
+                            </ul>
+                            <div class="works_btns">
+                                <div class="demo" onclick="location.href='https://iamsherolu.github.io/yt_exercise/'">demo</div>
+                                <div class="github_code" onclick="location.href='https://github.com/iamsherolu/yt_exercise'">GitHub Code</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery">
+                        <div class="works_img">
+                            <img src="image/樂遊新竹城.png">
+                        </div>
+                        <div class="works_description" style="float: right;">
+                            <div class="works_title">樂遊新竹城</div>
+                            <ul>
+                                <li>係連接新竹市政府open data所做之新竹市公園查詢</li>
+                                <li>係以純HTML、CSS以及JavaScript完成之</li>
+                                <li>目的：練習串接api</li>
+                            </ul>
+                            <div class="works_btns">
+                                <div class="demo" onclick="location.href='https://iamsherolu.github.io/kidtopia/'">demo</div>
+                                <div class="github_code" onclick="location.href='https://github.com/iamsherolu/kidtopia'">GitHub Code</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="arrow_left" onclick="plusSlides(-1)">
+                    <span class="material-symbols-outlined" style="color: snow;">
+                        chevron_left
+                    </span>
+                </div>
+                <div class="arrow_right" onclick="plusSlides(1)" >
+                    <span class="material-symbols-outlined" style="color: snow;">
+                        chevron_right
+                    </span>
+                </div>
+            </div>
+            <div class="learning_now">
+                <div class="skills_title" data-aos="fade-right">learning now</div>
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- contact -->
+    <section id="contact">
+        <div class="title" data-aos="fade-down">Contact</div>
+        <div class="bottom_layout" data-aos="fade-up">
+            <div class="bottom_message">
+                <h3>HJL's website</h3>
+                <p>Thank you for your watching :)</p>
+            </div>            
+            <form action="https://formspree.io/f/moqooknk" method="post">
+                <div class="email_content">
+                    <input type="text" placeholder="Name" name="name" id="name" autocomplete="off" required><br>
+                    <input type="text" placeholder="Email" name="email" id="email" autocomplete="off" required><br>
+                    <input type="text" placeholder="Subject" name="subject" id="subject" autocomplete="off" required><br>
+                    <input type="text" placeholder="Message" name="message"id="message" autocomplete="off" required><br>
+                    <button type="submit" id="sendBtn">Send</button>
+                    <p style="text-align: center; background:transparent;color: #D9B3B3;">THANK YOU FOR YOUR MESSAGE :)</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer fixed-bottom" id="footer">©Hsing Jou Lu 2024</footer>
+    
+    <!-- 套用AOS動畫 -->
+    <script>
+        AOS.init({
+            duration:3000,
+        });
+    </script>
+
+    <!-- 連結外部js -->
+    <script src="index.js" ></script>
+</body>
+</html>
